@@ -134,21 +134,11 @@ you can use
 
 ## Windows support
 
-The application can usually be built in Windows too (support for which
-required way more time than I should have spent, really, but I digress),
-by running `make` in a Developer Command Prompt for Visual Studio,
-provided an OpenCL SDK (such as the Intel or AMD one) is installed.
+Please open the clinfo.sln solution with your Visual Studio 2022+.
+It's expected that you have Windows SDK installed with the Visual Studio.
+OpenCL header and library are also needed, you can get it from your GPU or CPU
+vendor (e.g. NVidia's CUDA SDK, Intel/AMD OpenCL lib), or KhronosGroup OpenCL SDK.
 
-Precompiled Windows executable are available as artefacts of the
-AppVeyor CI.
-
-<table style='margin: 1em auto; width: 100%; max-width: 33em'>
-<tr><th>Build status</th><th colspan=2>Windows binaries</th></tr>
-<tr>
-<td><a href='https://ci.appveyor.com/project/Oblomov/clinfo/'><img
-src='https://ci.appveyor.com/api/projects/status/github/Oblomov/clinfo?svg=true'
-alt='Build status on AppVeyor'></a></td>
-<td><a href='https://ci.appveyor.com/api/projects/oblomov/clinfo/artifacts/clinfo.exe?job=platform%3a+x86'>32-bit</a></td>
-<td><a href='https://ci.appveyor.com/api/projects/oblomov/clinfo/artifacts/clinfo.exe?job=platform%3a+x64'>64-bit</a></td>
-</tr>
-</table>
+Please check the Visual Studio project properties on,
+Configurations -> C/C+ -> General to add the include path to CL/cl.h; 
+and Configurations -> linker -> General -> Additional lib path to opencl.lib.
